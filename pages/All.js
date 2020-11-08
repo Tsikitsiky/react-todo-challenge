@@ -1,7 +1,16 @@
 import React from "react"
-function All() {
+function All({todoList}) {
     return (
-        <h1>All Page</h1>
+        <div>
+            <ul>
+                {todoList.map(todo => <li key={todo}>
+                    <label>
+                        <input type="checkbox" />
+                        {todo}
+                    </label>
+                </li>)}
+            </ul>
+        </div>
     )
 }
 export default All

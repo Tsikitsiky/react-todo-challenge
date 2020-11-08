@@ -33891,8 +33891,14 @@ var _react = _interopRequireDefault(require("react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function All() {
-  return /*#__PURE__*/_react.default.createElement("h1", null, "All Page");
+function All({
+  todoList
+}) {
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("ul", null, todoList.map(todo => /*#__PURE__*/_react.default.createElement("li", {
+    key: todo
+  }, /*#__PURE__*/_react.default.createElement("label", null, /*#__PURE__*/_react.default.createElement("input", {
+    type: "checkbox"
+  }), todo)))));
 }
 
 var _default = All;
@@ -33961,7 +33967,7 @@ function AddTodo({
     e.preventDefault();
     setTodoList(prevList => [...prevList, todoInput]);
     e.target.reset();
-    console.log(todoList);
+    console.log(e.target);
   }
 
   return /*#__PURE__*/_react.default.createElement("form", {
@@ -34012,7 +34018,9 @@ function App() {
   }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     exact: true,
     path: "/"
-  }, /*#__PURE__*/_react.default.createElement(_All.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+  }, /*#__PURE__*/_react.default.createElement(_All.default, {
+    todoList: todoList
+  })), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/active"
   }, /*#__PURE__*/_react.default.createElement(_Active.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/completed"

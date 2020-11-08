@@ -10,7 +10,7 @@ function AddTodo({todoList ,setTodoList}) {
         e.preventDefault();
         setTodoList(prevList => [...prevList, todoInput]);
         e.target.reset();
-		 console.log(todoList)
+		 console.log(e.target)
     }
     return(
         <form onSubmit={handleSubmit}>

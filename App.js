@@ -13,7 +13,7 @@ function App() {
             <AddTodo todoList={todoList} setTodoList={setTodoList} />
             <Switch>
                 <Route exact path="/">
-                    <All />
+                    <All todoList={todoList} />
                 </Route>
                 <Route path="/active">
                     <Active/>
