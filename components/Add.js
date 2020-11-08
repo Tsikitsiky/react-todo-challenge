@@ -8,9 +8,15 @@ function AddTodo({todoList ,setTodoList}) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        setTodoList(prevList => [...prevList, todoInput]);
+        const newTodo = {
+            todoInput,
+            complete: false,
+            id: Date.now()
+        }
+
+        setTodoList(prevList => [...prevList, newTodo]);
         e.target.reset();
-		 console.log(e.target)
+		 console.log(newTodo)
     }
     return(
         <form onSubmit={handleSubmit}>

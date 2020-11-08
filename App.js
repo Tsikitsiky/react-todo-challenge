@@ -7,19 +7,44 @@ import Completed from "./pages/Complete"
 import AddTodo from "./components/Add"
 function App() {  
     const [todoList, setTodoList] = useState([]);  
+    function handleComplete(id) {
+        const newTodoList = todoList.map(todo => {
+			if (todo.id === id) {
+
+				return {
+					...todo,
+					complete: !todo.complete
+				};
+			}
+			return todo;
+		});
+        setTodoList(newTodoList);
+        console.log(todoList)
+    }
     return (
         <div>
             <Header />
-            <AddTodo todoList={todoList} setTodoList={setTodoList} />
+            <AddTodo 
+                todoList={todoList} 
+                setTodoList={setTodoList} />
             <Switch>
                 <Route exact path="/">
-                    <All todoList={todoList} />
+                    <All 
+                        todoList={todoList} 
+                        setTodoList={setTodoList} 
+                        handleComplete={handleComplete} />
                 </Route>
                 <Route path="/active">
-                    <Active/>
+                    <Active 
+                        todoList={todoList} 
+                        setTodoList={setTodoList} 
+                        handleComplete={handleComplete} />
                 </Route>
                 <Route path="/completed">
-                    <Completed />
+                    <Completed 
+                        todoList={todoList} 
+                        setTodoList={setTodoList} 
+                        handleComplete={handleComplete}  />
                 </Route>
             </Switch>
         </div>
