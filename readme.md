@@ -1,6 +1,5 @@
 # Todo App in React
 
-Challenge: Create a todo app following given designs, and use React to handle the frontend. Don’t look at the existing solution. Fulfill user stories below:
 
 ![image](./assets/todo1.png)
 ![image](./assets/todo2.png)
@@ -12,31 +11,17 @@ Challenge: Create a todo app following given designs, and use React to handle th
 -   User story: I can remove one or all tasks under the Completed tab
 -   User story (optional): Store the data in local storage that when I refresh the page I can still see my progress
 
-Icon: https://google.github.io/material-design-icons/
-
-No design link today, feel free to make it shine!
-
-As long as you fulfill all the user stories, you can give your personal touches by adding transition, using your own images, changing colors, or even creating your own layout,...
-
-Once you completed, submit your solutions by providing URLs for both GitHub repository and live app on Netlify and explain briefly what you have done.
-
-For the custom domain url you'll enter in netlify, please use the following naming convention : **react-todo-_YOUR_FIRSTNAME_.netlify.app** (replace YOUR_FIRSTNAME by your firstname)
-
-Good luck everybody!
-
-Template for your readme :
-
 <!-- Please update value in the {}  -->
 
-<h1 align="center">{Your project name}</h1>
+<h1 align="center">React todo challenge</h1>
 
 <div align="center">
   <h3>
-    <a href="https://{your-demo-link.your-domain}">
+    <a href="https://react-todo-sarah.netlify.app/">
       Demo
     </a>
     <span> | </span>
-    <a href="https://{your-url-to-the-solution}">
+    <a href="https://github.com/Tsikitsiky/react-todo-challenge">
       Solution
     </a>
   </h3>
@@ -56,21 +41,26 @@ Template for your readme :
 <!-- OVERVIEW -->
 
 ## Overview
+![image](./assets/all-tab.png)
+![image](./assets/active-tab.png)
+![image](./assets/completed-tab.png)
 
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+-   The demo can be seen in [Demo](https://react-todo-sarah.netlify.app/)
+-   Users can add todos in the list
+-   Users can complete tasks by cheking the checkbox
+-   Users can toggle between All, Active and Completed
+-   Users can remove one or all tasks under the Completed tab
 
-Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
-
--   Where can I see your demo?
--   What was your experience?
+<!-- -   What was your e
 -   What have you learned/improved?
--   Your wisdom? :)
+-   Your wisdom? :) -->
 
 ### Built With
 
 <!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
 
 -   [React](https://reactjs.org/)
+-   [React hooks](https://reactjs.org/docs/hooks-intro.html)
 
 ## Features
 
@@ -100,5 +90,5 @@ $ npm start
 ## Contact
 
 -   Website [your-website.com](https://{your-web-site-link})
--   GitHub [@your-username](https://{github.com/your-usermame})
+-   GitHub [@your-Tsikitsiky](https://{github.com/Tsikitsiky})
 -   Twitter [@your-twitter](https://{twitter.com/your-username})
