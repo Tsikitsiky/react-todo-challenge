@@ -34034,7 +34034,9 @@ function Completed({
     setTodoList(newList);
   }
 
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("ul", {
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "complete"
+  }, /*#__PURE__*/_react.default.createElement("ul", {
     className: "todoList"
   }, todoList.filter(todo => todo.complete === true).map(todo => /*#__PURE__*/_react.default.createElement("li", {
     key: todo.id,

@@ -12,7 +12,7 @@ function Completed({todoList, setTodoList, handleComplete}) {
         setTodoList(newList);
     }
     return (
-        <div>
+        <div className="complete">
             <ul className='todoList'>
                 {todoList.filter(todo => todo.complete === true)
                 .map(todo => <li key={todo.id} className="complete-li">
