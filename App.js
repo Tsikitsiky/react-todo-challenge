@@ -4,13 +4,12 @@ import All from "./pages/All"
 import Active from "./pages/Active"
 import {Switch, Route} from "react-router-dom"
 import Completed from "./pages/Complete"
-import AddTodo from "./components/Add"
+
 function App() {  
     const [todoList, setTodoList] = useState([]);  
     function handleComplete(id) {
         const newTodoList = todoList.map(todo => {
 			if (todo.id === id) {
-
 				return {
 					...todo,
 					complete: !todo.complete
@@ -22,11 +21,8 @@ function App() {
         console.log(todoList)
     }
     return (
-        <div>
+        <div className="body-container">
             <Header />
-            <AddTodo 
-                todoList={todoList} 
-                setTodoList={setTodoList} />
             <Switch>
                 <Route exact path="/">
                     <All 

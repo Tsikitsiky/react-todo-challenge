@@ -1,31 +1,23 @@
-import React from "react"
+import React from "react";
+import AddTodo from '../components/Add'
 function Active({todoList, setTodoList, handleComplete}) {
-    // function handleComplete(id) {
-    //         const newTodoList = todoList.map(todo => {
-    //     		if (todo.id === id) {
-    
-    //     			return {
-    //     				...todo,
-    //     				complete: !todo.complete
-    //     			};
-    //     		}
-    //     		return todo;
-    //     	});
-    //         setTodoList(newTodoList);
-    //         console.log(todoList)
-    //     }
     return (
-        <div>
-            <ul>
-                {todoList.filter(todo => todo.complete === false)
-                .map(todo => <li key={todo.id}>
-                    <label>
-                        <input type="checkbox" checked={todo.complete} onChange={() => handleComplete(todo.id)} />
-                        {todo.todoInput}
-                    </label>
-                </li>)}
-            </ul>
-        </div>
+        <>
+            <AddTodo 
+                todoList={todoList} 
+                setTodoList={setTodoList} />
+            <div>
+                <ul className='todoList'>
+                    {todoList.filter(todo => todo.complete === false)
+                    .map(todo => <li key={todo.id}>
+                        <input type="checkbox" id={todo.id} checked={todo.complete} onChange={() => handleComplete(todo.id)} />
+                        <label for={todo.id}>
+                            {todo.todoInput}
+                        </label>
+                    </li>)}
+                </ul>
+            </div>
+        </>
     )
 }
 export default Active

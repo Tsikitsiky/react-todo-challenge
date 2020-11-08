@@ -33868,7 +33868,7 @@ var _reactRouterDom = require("react-router-dom");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function Header() {
-  return /*#__PURE__*/_react.default.createElement("header", null, /*#__PURE__*/_react.default.createElement("ul", null, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  return /*#__PURE__*/_react.default.createElement("header", null, /*#__PURE__*/_react.default.createElement("h1", null, "#todo"), /*#__PURE__*/_react.default.createElement("ul", null, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/"
   }, "All")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/active"
@@ -33879,130 +33879,7 @@ function Header() {
 
 var _default = Header;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"pages/All.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function All({
-  todoList,
-  setTodoList,
-  handleComplete
-}) {
-  // function handleComplete(id) {
-  //         const newTodoList = todoList.map(todo => {
-  //     		if (todo.id === id) {
-  //     			return {
-  //     				...todo,
-  //     				complete: !todo.complete
-  //     			};
-  //     		}
-  //     		return todo;
-  //     	});
-  //         setTodoList(newTodoList);
-  //     }
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("ul", null, todoList.map(todo => /*#__PURE__*/_react.default.createElement("li", {
-    key: todo.id
-  }, /*#__PURE__*/_react.default.createElement("label", null, /*#__PURE__*/_react.default.createElement("input", {
-    type: "checkbox",
-    checked: todo.complete,
-    onChange: () => handleComplete(todo.id)
-  }), todo.todoInput)))));
-}
-
-var _default = All;
-exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"pages/Active.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function Active({
-  todoList,
-  setTodoList,
-  handleComplete
-}) {
-  // function handleComplete(id) {
-  //         const newTodoList = todoList.map(todo => {
-  //     		if (todo.id === id) {
-  //     			return {
-  //     				...todo,
-  //     				complete: !todo.complete
-  //     			};
-  //     		}
-  //     		return todo;
-  //     	});
-  //         setTodoList(newTodoList);
-  //         console.log(todoList)
-  //     }
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("ul", null, todoList.filter(todo => todo.complete === false).map(todo => /*#__PURE__*/_react.default.createElement("li", {
-    key: todo.id
-  }, /*#__PURE__*/_react.default.createElement("label", null, /*#__PURE__*/_react.default.createElement("input", {
-    type: "checkbox",
-    checked: todo.complete,
-    onChange: () => handleComplete(todo.id)
-  }), todo.todoInput)))));
-}
-
-var _default = Active;
-exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"pages/Complete.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function Completed({
-  todoList,
-  setTodoList,
-  handleComplete
-}) {
-  function handleDelete(id) {
-    const newList = todoList.filter(todo => todo.id !== id);
-    setTodoList(newList);
-  }
-
-  function deleteAll() {
-    const newList = todoList.filter(todo => todo.complete === false);
-    setTodoList(newList);
-  }
-
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("ul", null, todoList.filter(todo => todo.complete === true).map(todo => /*#__PURE__*/_react.default.createElement("li", {
-    key: todo.id
-  }, /*#__PURE__*/_react.default.createElement("label", null, /*#__PURE__*/_react.default.createElement("input", {
-    type: "checkbox",
-    checked: todo.complete,
-    onChange: () => handleComplete(todo.id)
-  }), todo.todoInput), /*#__PURE__*/_react.default.createElement("button", {
-    onClick: () => handleDelete(todo.id)
-  }, "Delete")))), /*#__PURE__*/_react.default.createElement("button", {
-    onClick: deleteAll
-  }, "Delete All"));
-}
-
-var _default = Completed;
-exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"components/Add.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"components/Add.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34050,7 +33927,138 @@ function AddTodo({
 
 var _default = AddTodo;
 exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js"}],"pages/All.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _Add = _interopRequireDefault(require("../components/Add"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function All({
+  todoList,
+  setTodoList,
+  handleComplete
+}) {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_Add.default, {
+    todoList: todoList,
+    setTodoList: setTodoList
+  }), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("ul", {
+    className: "todoList"
+  }, todoList.map(todo => /*#__PURE__*/_react.default.createElement("li", {
+    key: todo.id
+  }, /*#__PURE__*/_react.default.createElement("input", {
+    type: "checkbox",
+    id: todo.id,
+    checked: todo.complete,
+    onChange: () => handleComplete(todo.id)
+  }), /*#__PURE__*/_react.default.createElement("label", {
+    for: todo.id
+  }, todo.todoInput))))));
+}
+
+var _default = All;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","../components/Add":"components/Add.js"}],"pages/Active.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _Add = _interopRequireDefault(require("../components/Add"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Active({
+  todoList,
+  setTodoList,
+  handleComplete
+}) {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_Add.default, {
+    todoList: todoList,
+    setTodoList: setTodoList
+  }), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("ul", {
+    className: "todoList"
+  }, todoList.filter(todo => todo.complete === false).map(todo => /*#__PURE__*/_react.default.createElement("li", {
+    key: todo.id
+  }, /*#__PURE__*/_react.default.createElement("input", {
+    type: "checkbox",
+    id: todo.id,
+    checked: todo.complete,
+    onChange: () => handleComplete(todo.id)
+  }), /*#__PURE__*/_react.default.createElement("label", {
+    for: todo.id
+  }, todo.todoInput))))));
+}
+
+var _default = Active;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","../components/Add":"components/Add.js"}],"assets/trash.svg":[function(require,module,exports) {
+module.exports = "/trash.46c8aa90.svg";
+},{}],"pages/Complete.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _trash = _interopRequireDefault(require("../assets/trash.svg"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Completed({
+  todoList,
+  setTodoList,
+  handleComplete
+}) {
+  function handleDelete(id) {
+    const newList = todoList.filter(todo => todo.id !== id);
+    setTodoList(newList);
+  }
+
+  function deleteAll() {
+    const newList = todoList.filter(todo => todo.complete === false);
+    setTodoList(newList);
+  }
+
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("ul", {
+    className: "todoList"
+  }, todoList.filter(todo => todo.complete === true).map(todo => /*#__PURE__*/_react.default.createElement("li", {
+    key: todo.id,
+    className: "complete-li"
+  }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("input", {
+    type: "checkbox",
+    checked: todo.complete,
+    onChange: () => handleComplete(todo.id)
+  }), /*#__PURE__*/_react.default.createElement("label", {
+    for: todo.id
+  }, todo.todoInput)), /*#__PURE__*/_react.default.createElement("button", {
+    className: "delete",
+    onClick: () => handleDelete(todo.id)
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    src: _trash.default
+  }))))), /*#__PURE__*/_react.default.createElement("button", {
+    className: "delete-all",
+    onClick: deleteAll
+  }, "Delete All"));
+}
+
+var _default = Completed;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","../assets/trash.svg":"assets/trash.svg"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34069,8 +34077,6 @@ var _Active = _interopRequireDefault(require("./pages/Active"));
 var _reactRouterDom = require("react-router-dom");
 
 var _Complete = _interopRequireDefault(require("./pages/Complete"));
-
-var _Add = _interopRequireDefault(require("./components/Add"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -34095,10 +34101,9 @@ function App() {
     console.log(todoList);
   }
 
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_Header.default, null), /*#__PURE__*/_react.default.createElement(_Add.default, {
-    todoList: todoList,
-    setTodoList: setTodoList
-  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "body-container"
+  }, /*#__PURE__*/_react.default.createElement(_Header.default, null), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     exact: true,
     path: "/"
   }, /*#__PURE__*/_react.default.createElement(_All.default, {
@@ -34122,7 +34127,7 @@ function App() {
 
 var _default = App;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","./components/Header":"components/Header.js","./pages/All":"pages/All.js","./pages/Active":"pages/Active.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./pages/Complete":"pages/Complete.js","./components/Add":"components/Add.js"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./components/Header":"components/Header.js","./pages/All":"pages/All.js","./pages/Active":"pages/Active.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./pages/Complete":"pages/Complete.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));

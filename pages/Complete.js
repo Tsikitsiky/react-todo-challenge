@@ -1,4 +1,5 @@
 import React from "react";
+import trashIcon from '../assets/trash.svg'
 
 function Completed({todoList, setTodoList, handleComplete}) {
     function handleDelete(id) {
@@ -12,17 +13,26 @@ function Completed({todoList, setTodoList, handleComplete}) {
     }
     return (
         <div>
-            <ul>
+            <ul className='todoList'>
                 {todoList.filter(todo => todo.complete === true)
-                .map(todo => <li key={todo.id}>
-                    <label>
-                        <input type="checkbox" checked={todo.complete} onChange={() => handleComplete(todo.id)} />
+                .map(todo => <li key={todo.id} className="complete-li">
+                    <div>
+                        <input 
+                            type="checkbox" 
+                            checked={todo.complete} 
+                            onChange={() => handleComplete(todo.id)} />
+                        <label for={todo.id}>
                         {todo.todoInput}
-                    </label>
-                    <button onClick={() => handleDelete(todo.id)}>Delete</button>
+                        </label>
+                    </div>
+                    <button className="delete" onClick={() => handleDelete(todo.id)}>
+                        <img src={trashIcon} />
+                    </button>
                 </li>)}
             </ul>
-            <button onClick={deleteAll}>Delete All</button>
+            <button className="delete-all" onClick={deleteAll}>
+                Delete All
+            </button>
         </div>
     )
 }
